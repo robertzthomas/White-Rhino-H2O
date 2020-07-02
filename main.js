@@ -7,7 +7,7 @@ if(!name.value || !email.value || !message.value) {
     alterify.error("Please check your enteries")
 } else {
     $.ajax({
-        url: "https://formspree.io/you@email.com",
+        url: "https://formspree.io/zacthomas86@gmail.com",
         method: "POST",
         data: $(this).serialize(),
         dataType: "json"
