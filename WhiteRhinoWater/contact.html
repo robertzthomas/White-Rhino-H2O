@@ -46,21 +46,28 @@
         <div class="row center-xs center-sm center-md center-lg">
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <h2><span class="primary-text"></span></h2>
-            <p>Please use this form to contact us</p>
-            <form>
+            <p style="font-size: 25px;">Please use this form to contact us</p>
+            <form
+            action="https://formspree.io/xnqggdbl" 
+            method="POST"
+            >
               <div>
                 <label for="name">Name</label><br>
-                <input type="text" name="name">
+                <input type="text" id="username" name="name" placeholder="ex.(John Smith)">
               </div>
               <div>
                 <label for="email">Email</label><br>
-                <input type="text" name="email">
+                <input type="email" id="email" name="email address" placeholder="ex.(JohnSmith@gmail.com)">
+              </div>
+              <div>
+                <label for="number">Phone Number</label><br>
+                <input type="number" id="number" name="phone number" pattern="[0-9] {7,10}" placeholder="ex.(123) 456-7891">
               </div>
               <div>
                 <label for="message">Message</label><br>
                 <textarea name="message"></textarea>
               </div>
-              <button type="submit" name="button">Submit</button>
+              <button onclick="submissionValidation()" type="submit" id="submit" name="button">Submit</button>
             </form>
           </div>
         </div>
@@ -86,9 +93,11 @@
           <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
             <h4>Subscribe</h4>
             <p>Subscribe to our newsletter to be notified on our latest deals</p>
-            <form>
-              <input type="text" name="email" placeholder="Enter Email">
-              <button type="submit" name="button">Submit</button>
+            <form 
+            action="https://formspree.io/xnqggdbl" 
+            method="POST">
+              <input type="email" name="email" id="newsletterEmail" placeholder="Enter Email">
+              <button type="submit" name="button" onclick="newsletterSubmissionValidation()">Submit</button>
             </form>
           </div>
         </div>
@@ -106,3 +115,31 @@
     </footer>
   </body>
 </html>
+<!--JAVASCRIPT SUBMISSION VALIDATION -->
+<script>
+  var username  = document.getElementById("username"),
+    email   = document.getElementById("email"),
+    number  = document.getElementById("number"),
+    message = document.getElementById("message"),
+    submit  = document.getElementById("submit");
+    newsletterEmail = document.getElementById("newsletterEmail")
+    
+  function submissionValidation(){
+    if(!email.value && !number.value){
+      alert("please enter your email address or phone number");
+}   else if(!username.value) {
+      alert("please enter your name");
+}   else if(number.value && number.value.length < 10 || number.value.length > 13){
+      alert("please make sure you enter a 10 digit phone number example: (123) 456-7891");
+}   else{
+      alert("thank you for your interest in White Rhino. we will be in touch soon");
+} 
+  }
+  function newsletterSubmissionValidation(){
+    if(!newsletterEmail.value){
+      alert("please enter your email address");
+    } else{
+      alert("thank you for subscribing to our newsletter!");
+    }
+  }
+</script>

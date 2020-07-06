@@ -142,7 +142,7 @@ body{
     line-height:2em;
   }
   
-  #company input[type="text"]{
+  #company input[type="email"]{
     padding:7px;
   }
   
@@ -192,6 +192,16 @@ body{
     height:40px;
     margin-bottom:10px;
   }
+  .contact form input[type="number"]{
+    width:50%;
+    height:40px;
+    margin-bottom:10px;
+  }
+  .contact form input[type="email"]{
+    width:50%;
+    height:40px;
+    margin-bottom:10px;
+  }
   
   .contact form textarea{
     width:50%;
@@ -202,7 +212,7 @@ body{
     width:50%;
     padding:10px 0;
     border:0;
-    background: rgb(22, 172, 177);
+    background: rgb(68, 208, 212);
     color:#fff;
   }
   
