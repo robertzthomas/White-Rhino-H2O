@@ -46,14 +46,16 @@
         <div class="row center-xs center-sm center-md center-lg">
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <h2><span class="primary-text"></span></h2>
-            <p style="font-size: 25px;">Please use this form to contact us</p>
+            <p style="font-size: 30px;">Please Call: <span class="primary-text"><b>(302) 363-2802</b></span></p>
+            <p style="font-size: 25px;"><b>OR</b></p>
+            <p style="font-size: 25px;">Use this form to contact us later</p>
             <form
             action="https://formspree.io/xnqggdbl" 
             method="POST"
             >
               <div>
                 <label for="name">Name</label><br>
-                <input type="text" id="username" name="name" placeholder="ex.(John Smith)">
+                <input type="text" id="username" name="name" placeholder="ex.(John Smith)" required>
               </div>
               <div>
                 <label for="email">Email</label><br>
@@ -61,7 +63,7 @@
               </div>
               <div>
                 <label for="number">Phone Number</label><br>
-                <input type="number" id="number" name="phone number" pattern="[0-9] {7,10}" placeholder="ex.(123) 456-7891">
+                <input type="text" id="number" name="phone number" placeholder="ex.(123) 456-7891" pattern="[0-9]{10, 13}" minlength="10" maxlength="13">
               </div>
               <div>
                 <label for="message">Message</label><br>
@@ -96,7 +98,7 @@
             <form 
             action="https://formspree.io/xnqggdbl" 
             method="POST">
-              <input type="email" name="email" id="newsletterEmail" placeholder="Enter Email">
+              <input type="email" name="email" id="newsletterEmail" placeholder="Enter Email" required>
               <button type="submit" name="button" onclick="newsletterSubmissionValidation()">Submit</button>
             </form>
           </div>
@@ -125,17 +127,18 @@
     newsletterEmail = document.getElementById("newsletterEmail")
     
   function submissionValidation(){
-    if(!email.value && !number.value){
-      alert("please enter your email address or phone number");
+     if(!email.value && !number.value){
+      alert("Please enter your email address or phone number");
 }   else if(!username.value) {
-      alert("please enter your name");
+      alert("Please enter your name");
 }   else if(number.value && number.value.length < 10 || number.value.length > 13){
-      alert("please make sure you enter a 10 digit phone number example: (123) 456-7891");
+      alert("Please make sure you enter a 10 digit phone number.  example: (123) 456-7891");
 }   else{
-      alert("thank you for your interest in White Rhino. we will be in touch soon");
-} 
+      alert("Thank you for your interest in White Rhino. We will be in touch soon!");
+}
   }
   function newsletterSubmissionValidation(){
+    newsletterEmail = document.getElementById("newsletterEmail")
     if(!newsletterEmail.value){
       alert("please enter your email address");
     } else{

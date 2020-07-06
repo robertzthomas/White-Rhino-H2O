@@ -98,8 +98,8 @@
             <form
             action="https://formspree.io/xnqggdbl"
             method="POST">
-              <input type="text" name="email" placeholder="Enter Email">
-              <button type="submit" name="button">Submit</button>
+              <input type="email" name="email" id="newsletterEmail" placeholder="Enter Email" required>
+              <button type="submit" name="button" onclick="newsletterSubmissionValidation()">Submit</button>
             </form>
           </div>
         </div>
@@ -117,3 +117,13 @@
       </footer>
   </body>
 </html>
+<script>
+  function newsletterSubmissionValidation(){
+    newsletterEmail = document.getElementById("newsletterEmail")
+    if(!newsletterEmail.value){
+      alert("please enter your email address");
+    } else{
+      alert("thank you for subscribing to our newsletter!");
+    }
+  }
+</script>
